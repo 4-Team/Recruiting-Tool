@@ -12,3 +12,5 @@ addons:
 before_script:
   - npm install -g gulp-cli
 script: gulp build
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
