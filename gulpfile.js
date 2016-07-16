@@ -56,3 +56,5 @@ gulp.task('watch', (done) => {
 
 gulp.task('default', gulp.series(gulp.parallel('lint', 'scripts'), 'html', 
     gulp.parallel('serve', 'watch')));
+
+gulp.task('build', gulp.series(gulp.parallel('lint', 'scripts'), 'html'));
