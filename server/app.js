@@ -1,7 +1,6 @@
 const http         = require('http'),
       path         = require('path'),
       express      = require('express'),
-      contentTypes = require('./utils/content-types'),
       sysInfo      = require('./utils/sys-info'),
       env          = process.env,
       dist         = path.resolve(__dirname, '../dist');
