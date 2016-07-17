@@ -2,8 +2,7 @@ const http         = require('http'),
       path         = require('path'),
       express      = require('express'),
       sysInfo      = require('./utils/sys-info'),
-      env          = process.env,
-      dist         = path.resolve(__dirname, '../dist');
+      env          = process.env;
 
 var app = express();
 
@@ -11,7 +10,7 @@ var app = express();
 //            for OpenShift health monitoring
 app.get('/health', (req, res) => { res.end(); });
 
-app.use('/', express.static(dist));
+app.use('/', express.static(path.resolve(__dirname, '../dist')));
 
 app.get('/info/gen', (req, res) => {
   res.json(sysInfo['gen']());
